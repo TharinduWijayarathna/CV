@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background: #585c68;
+            font-size: 14px;
+            line-height: 22px;
+            color: #555555;
+        }
+
+        .bold {
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        .semi-bold {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .resume {
+            width: 800px;
+            height: auto;
+            display: flex;
+
+        }
+
+        .resume .resume_left {
+            width: 280px;
+            background: #002990;
+        }
+
+        .resume .resume_left .resume_profile {
+            width: 100%;
+            height: 280px;
+        }
+
+        .resume .resume_left .resume_profile img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .resume .resume_left .resume_content {
+            padding: 0 25px;
+        }
+
+        .resume .title {
+            margin-bottom: 20px;
+        }
+
+        .resume .resume_left .bold {
+            color: #fff;
+        }
+
+        .resume .resume_left .regular {
+            color: #b1eaff;
+        }
+
+        .resume .resume_item {
+            padding: 25px 0;
+            border-bottom: 2px solid #b1eaff;
+        }
+
+        .resume .resume_left .resume_item:last-child,
+        .resume .resume_right .resume_item:last-child {
+            border-bottom: 0px;
+        }
+
+        .resume .resume_left ul li {
+            display: flex;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .resume .resume_left ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .resume .resume_left ul li .icon {
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            color: #002990;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .resume .icon i,
+        .resume .resume_right .resume_hobby ul li i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .resume .resume_left ul li .data {
+            color: #b1eaff;
+        }
+
+        .resume .resume_left .resume_skills ul li {
+            display: flex;
+            margin-bottom: 10px;
+            color: #b1eaff;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .resume .resume_left .resume_skills ul li .skill_name {
+            width: 25%;
+        }
+
+        .resume .resume_left .resume_skills ul li .skill_progress {
+            width: 60%;
+            margin: 0 5px;
+            height: 5px;
+            background: #009fd9;
+            position: relative;
+        }
+
+        .resume .resume_left .resume_skills ul li .skill_per {
+            width: 15%;
+        }
+
+        .resume .resume_left .resume_skills ul li .skill_progress span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #fff;
+        }
+
+        .resume .resume_left .resume_social .semi-bold {
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .resume .resume_right {
+            width: 520px;
+            background: #fff;
+            padding: 25px;
+        }
+
+        .resume .resume_right .bold {
+            color: #002990;
+        }
+
+        .resume .resume_right .resume_work ul,
+        .resume .resume_right .resume_education ul {
+            padding-left: 40px;
+            overflow: hidden;
+        }
+
+        .resume .resume_right ul li {
+            position: relative;
+        }
+
+        .resume .resume_right ul li .date {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .resume .resume_right ul li .info {
+            margin-bottom: 20px;
+        }
+
+        .resume .resume_right ul li:last-child .info {
+            margin-bottom: 0;
+        }
+
+        .resume .resume_right .resume_work ul li:before,
+        .resume .resume_right .resume_education ul li:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -25px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 2px solid #002990;
+        }
+
+        .resume .resume_right .resume_work ul li:after,
+        .resume .resume_right .resume_education ul li:after {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: -21px;
+            width: 2px;
+            height: 115px;
+            background: #002990;
+        }
+
+        .resume .resume_right .resume_hobby ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .resume .resume_right .resume_hobby ul li {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #002990;
+            border-radius: 50%;
+            position: relative;
+            color: #002990;
+        }
+
+        .resume .resume_right .resume_hobby ul li i {
+            font-size: 30px;
+        }
+
+        .resume .resume_right .resume_hobby ul li:before {
+            content: "";
+            position: absolute;
+            top: 40px;
+            right: -52px;
+            width: 50px;
+            height: 2px;
+            background: #002990;
+        }
+
+        .resume .resume_right .resume_hobby ul li:last-child:before {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #e9f9ff;
+        }
+
+        .resume_skill ul li:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -25px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 2px solid #002990;
+        }
+
+
+        .resume_skill ul li:after {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: -21px;
+            width: 2px;
+            height: 115px;
+            background: #002990;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <div class="resume">
+        <div class="resume_left">
+            <div class="resume_profile">
+                <img src="https://media.licdn.com/dms/image/D5603AQF5E66dNchRYw/profile-displayphoto-shrink_800_800/0/1682060561705?e=2147483647&v=beta&t=nTOp1ytucUotsltKaYet_9jYq3Loa9x83G6aaUCeGEM"
+                    alt="profile_pic">
+            </div>
+            <div class="resume_content">
+                <div class="resume_item resume_info">
+                    <div class="title">
+                        <p class="bold">Tharindu Wijayarathna</p>
+                        <p class="regular">Associate Software Engineer</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="icon">
+                                <i class="fas fa-map-signs"></i>
+                            </div>
+                            <div class="data">
+                                No 79, Hapugoda, <br /> Ambatenna
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="data">
+                                +94 76 578 1398
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="data">
+                                wikum.dev@gmail.com
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="resume_item resume_social">
+                    <div class="title">
+                        <p class="bold">Social</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="icon">
+                                <i class="fab fa-facebook-square"></i>
+                            </div>
+                            <div class="data">
+                                <p class="semi-bold">Facebook</p>
+                                <p><a target="_blank" href="https://www.facebook.com/tharinduwijayarathna.ck/">Tharindu
+                                        Wijayarathna</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fab fa-twitter-square"></i>
+                            </div>
+                            <div class="data">
+                                <p class="semi-bold">Twitter</p>
+                                <p><a target="_blank" href="https://twitter.com/TharinduWijaya4">TharinduWijaya4</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="data">
+                                <p class="semi-bold">Github</p>
+                                <p><a target="_blank"
+                                        href="https://twitter.com/TharinduWijaya4">TharinduWijayarathna</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="data">
+                                <p class="semi-bold">Linkedin</p>
+                                <p><a target="_blank"
+                                        href="https://www.linkedin.com/in/tharindu-wijayarathna-98499a203/">Tharindu
+                                        Wijayarathna</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="resume_right">
+            <div class="resume_item resume_about">
+                <div class="title">
+                    <p class="bold">About us</p>
+                </div>
+                <p>To be an enthusiastic role
+                    for an esteemed
+                    organization with my
+                    knowledge and skills,
+                    while improving my skills,
+                    knowledge, and work
+                    experiences as well as
+                    fulfilling the
+                    organization's goal.</p>
+            </div>
+            <div class="resume_item resume_work">
+                <div class="title">
+                    <p class="bold">Work Experience</p>
+                </div>
+                <ul>
+                    <li>
+                        <div class="date">2022 - Present</div>
+                        <div class="info">
+                            <p class="semi-bold">Associate Software Engineer (CyberElysium Pvt Ltd)</p>
+                            <p>Dynamic and results-driven Associate Software Engineer with a background in full-stack
+                                web development. Rapidly advanced from intern to the current role at CyberElysium Pvt
+                                Ltd. Proficient in Laravel, VueJs, Inertia JS, JavaScript, and jQuery. Experienced in
+                                the entire software development lifecycle, emphasizing performance optimization and
+                                seamless user experiences. Adept at collaborative problem-solving and committed to
+                                ongoing learning. Ready to contribute skills and innovation to dynamic software
+                                projects.</p>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <div class="date">2015 - 2017</div>
+                        <div class="info">
+                            <p class="semi-bold">Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date">2017 - Present</div>
+                        <div class="info">
+                            <p class="semi-bold">Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus!</p>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="resume_item resume_education">
+                <div class="title">
+                    <p class="bold">Education</p>
+                </div>
+                <ul>
+                    <li>
+                        <div class="date">2023 - Present</div>
+                        <div class="info">
+                            <p class="semi-bold">Bsc. (Hons) Software Engineering (Cardiff Metropolitan University)</p>
+                            <p>I am currently following the Bsc. (Hons) Software Engineering degree at Cardiff
+                                Metropolitan University.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date">2021 - 2022</div>
+                        <div class="info">
+                            <p class="semi-bold">Diploma in Software Engineering (JIAT)</p>
+                            <p>I have completed the Diploma in Software Engineering at JIAT.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resume_item resume_education">
+                <div class="title">
+                    <p class="bold">Technologies And Skills</p>
+                </div>
+
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">Frontend Technologies</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Bootstrap</li>
+                            </ol>
+                        </div>
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>Vue JS</li>
+                                <li>Inertia JS</li>
+                                <li>jQuery</li>
+                                <li>AJAX</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="info" style="margin-top: 15px;">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">Languages and Frameworks</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>PHP</li>
+                                <li>JAVA</li>
+                            </ol>
+                        </div>
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>Laravel</li>
+                                <li>Spring Boot</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info" style="margin-top: 15px;">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">Database Servers and Tools</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>MYSQL</li>
+                                <li>MariaDB</li>
+                                <li>PostgreSQL</li>
+                                <li>Firebase</li>
+                            </ol>
+                        </div>
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>MSSQL Management Studio</li>
+                                <li>phpMyAdmin</li>
+                                <li>MySQL Workbench</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info" style="margin-top: 15px;">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">Report Tools</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>Jasper Reports
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info" style="margin-top: 15px;">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">Version Control Systems and
+                        Tools</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>Git</li>
+                                <li>GitHub</li>
+                                <li>GitLab</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="info" style="margin-top: 15px;">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">Build Tools</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>Ant</li>
+                                <li>Maven</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="info" style="margin-top: 15px;">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">Project Management</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <div style="width: 50%;">
+                            <ol>
+                                <li>Scrum</li>
+                                <li>Trello</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume_item resume_education">
+                <div class="title">
+                    <p class="bold">Experience</p>
+                </div>
+
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">CyberElysium Pvt Ltd (2022 -
+                        Present)</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                            I am a dynamic and results-driven Associate Software
+                            Engineer with a background in full-stack web development.
+                            Commencing my journey at CyberElysium Pvt Ltd as an
+                            intern in September 2022, I have rapidly advanced to my
+                            current role, demonstrating proficiency in Laravel, VueJs,
+                            Inertia JS, JavaScript, and jQuery. My contributions span
+                            the entire software development lifecycle, from
+                            conceptualization to deployment, with a keen focus on
+                            optimizing application performance and delivering
+                            seamless user experiences. Adept at collaborative problem solving, I actively engage in
+                            ongoing learning to stay at the
+                            forefront of industry trends. Eager to leverage my skills
+                            and passion for innovation in contributing to dynamic
+                            software projects.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="resume_item resume_education">
+                <div class="title">
+                    <p class="bold">Projects</p>
+                </div>
+
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px;">YOO ERP (Laravel, Livewire,
+                        JQuery)</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                            For the YOO Brands ERP system, I utilized Laravel and Livewire for the back-end development
+                            and incorporated various front-end technologies like jQuery, HTML, and CSS to create a
+                            visually appealing and intuitive user interface. Additionally, I implemented features like
+                            inventory management, order tracking, and reporting to provide the client with a
+                            comprehensive and efficient solution.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px; margin-top: 15px;">SRIS POS
+                        (Laravel, Livewire, JQuery)</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                            I used my skills in Laravel, Livewire, jQuery, HTML, and CSS to build a responsive and
+                            efficient system that streamlined the ordering and payment process. I also integrated
+                            features like inventory management, reporting, and customer analytics to enhance the overall
+                            functionality of the system.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px; margin-top: 15px;">IJVR Valuation
+                        (Laravel, VueJs, InertiaJs)</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                            The IJVR Valuation System, developed with Vue.js, Laravel, and Inertia.js, is an innovative
+                            platform designed for the assessment of real estate locations in Sri Lanka and other
+                            countries. This dynamic system not only allows users to efficiently input and manage
+                            valuation data but also integrates seamlessly with an interactive map, providing a visual
+                            representation of marked locations. The combination of Vue.js and Laravel ensures a
+                            responsive and intuitive user interface, while Inertia.js streamlines the development
+                            process by allowing single-page applications with server-side routing. With a focus on data
+                            security and privacy, this system stands as a technologically advanced and user-friendly
+                            tool, contributing to the efficiency and accuracy of property valuations in the real estate
+                            industry.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px; margin-top: 15px;">Boutique Sri
+                        Lanka (Laravel, VueJs, InertiaJs)</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                            Contributed significantly to the development of Boutique Sri Lanka, a Hotel and Tourism
+                            Management System featuring a robust booking engine. Leveraged expertise in Laravel, Vue.js,
+                            and Inertia.js to create a secure, scalable, and user-friendly platform. This project
+                            underscored my ability to deliver innovative solutions in the dynamic realm of hospitality
+                            and tourism.
+                        </p>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px; margin-top: 15px;">My Learners
+                        (Laravel, VueJs, InertiaJs)</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                            Constructed "My Learners," a dynamic Driving Learners Management System with dedicated ends
+                            for admin, user, and instructor functionalities. Employing Laravel, Vue.js, and Inertia.js,
+                            I played a key role in developing this web application for CyberElysium Pvt Ltd. The project
+                            underscores my technical adeptness and the capability to design a comprehensive solution for
+                            efficient management in the driving education sector.
+                        </p>
+                    </div>
+                </div>
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px; margin-top: 15px;">MySales
+                        (Laravel, VueJs, InertiaJs)</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                            Engineered "MySales," a web-based Point of Sale (POS) application utilizing Laravel, Vue.js,
+                            and Inertia.js. This application, developed as a service for customers at CyberElysium Pvt
+                            Ltd, represents a powerful tool for streamlined and efficient sales transactions. The
+                            integration of Laravel ensures a secure and robust backend infrastructure, while Vue.js and
+                            Inertia.js contribute to a responsive and dynamic user interface. My role in this project
+                            exemplifies my ability to deliver client-focused solutions in the realm of web application
+                            development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="resume_item resume_education">
+                <div class="title">
+                    <p class="bold">Non Related Referees</p>
+                </div>
+                <div class="info">
+                    <p class="semi-bold" style="margin-bottom: 2px; margin-left: 43px; margin-top: 15px;">Mr. Yasitha Herath</p>
+                    <div style="display: flex; margin-left: 43px;">
+                        <p>
+                           Senior DevOps Engineer <br>
+                           Chakray Consulting (Pvt) Ltd <br>
+                            (+94) 77 525 2300 <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+</body>
+
+</html>
